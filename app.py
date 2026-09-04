@@ -25,6 +25,19 @@ cursor.execute(comando, valores)
 conexao.commit()
 
 print("Despesa cadastrada com sucesso!")
+conexao.close()
 
-cursor.close()
+import mysql.connector
+
+conexao = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="teste",
+    database="financias_db",
+)
+
+cursor = conexao.cursor()
+
+print("--- Cadastrar Nova Despesa ---")
+
 conexao.close()
